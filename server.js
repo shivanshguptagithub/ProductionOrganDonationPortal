@@ -5,6 +5,8 @@ import bodyParser from "body-parser";
 import validator from 'validator';
 import dotenv from "dotenv";
 import path from "path";
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 //require packages for passport
 import session from "express-session";
 import passport from "passport";
@@ -15,6 +17,9 @@ app.use(bodyParser.urlencoded({extends:true}));
 app.use(bodyParser.json());
 let isAuthenticate=false;
 dotenv.config();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 //using express-session
 app.use(session({
   secret:"this is my passport secret",
@@ -25,7 +30,8 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect("mongodb://localhost:27017/OrganDonationPortalDB");
+ mongoose.connect("mongodb://localhost:27017/OrganDonationPortalDB");
+//mongoose.connect("mongodb+srv://guptashivansh28121999:FcQBbBeTVaRg2jC1@cluster0.xakvdsx.mongodb.net/OrganDonationPortalDB");
 const userSchema= new mongoose.Schema({
   username:String,
   password:String
