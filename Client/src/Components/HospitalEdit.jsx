@@ -133,7 +133,7 @@ function HospitalEdit(props){
     event.preventDefault();
     console.warn(event);
     const {full_name, email, phone_number, address, age, blood_group, organ_type, status}= user;
-    const res= await fetch("http://localhost:5000/HospitalEdit/"+id,{
+    const res= await fetch("/HospitalEdit/"+id,{
       method:"POST",
       headers:{
         "Content-Type":"application/json"
