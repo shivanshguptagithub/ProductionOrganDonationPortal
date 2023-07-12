@@ -219,15 +219,9 @@ function App() {
             >
               <div class="d-flex flex-column">
                 <img
-                  class="img-fluid rounded w-75 align-self-end"
-                  src="https://www.shutterstock.com/image-photo/organ-donation-transplantation-concept-human-hands-1765962845"
-                  alt=""
-                />
-                <img
-                  class="img-fluid rounded w-50 bg-white pt-3 pe-3"
-                  src="https://www.shutterstock.com/image-vector/organ-donation-web-banner-flyer-600w-1569642214.jpg"
-                  alt=""
-                  style={{ marginTop: "-25%" }}
+                  class="img-fluid rounded w-100 align-self-end"
+                  src="https://e0.pxfuel.com/wallpapers/10/159/desktop-wallpaper-a-new-teenage-cause-organ-donation-opinion.jpg"
+                  alt="organ donation image"
                 />
               </div>
             </div>
