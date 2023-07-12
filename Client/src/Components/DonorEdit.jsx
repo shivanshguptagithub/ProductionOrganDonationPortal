@@ -133,7 +133,7 @@ function DonorEdit(props){
     event.preventDefault();
     console.warn(event);
     const {full_name, email, phone_number, address, age, blood_group, organ_type, status}= user;
-    const res= await fetch("http://localhost:5000/donorEdit/"+id,{
+    const res= await fetch("/donorEdit/"+id,{
       method:"POST",
       headers:{
         "Content-Type":"application/json"
