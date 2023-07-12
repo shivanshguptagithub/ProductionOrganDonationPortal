@@ -225,7 +225,7 @@ function App() {
                 />
                 <img
                   class="img-fluid rounded w-50 bg-white pt-3 pe-3"
-                  src=".\Client\build\Organ Donation Portal_files\organ donation image.webp"
+                  src="https://www.shutterstock.com/image-vector/organ-donation-web-banner-flyer-600w-1569642214.jpg"
                   alt=""
                   style={{ marginTop: "-25%" }}
                 />
