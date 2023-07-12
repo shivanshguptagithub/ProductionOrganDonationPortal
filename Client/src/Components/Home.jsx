@@ -220,7 +220,7 @@ function App() {
               <div class="d-flex flex-column">
                 <img
                   class="img-fluid rounded w-75 align-self-end"
-                  src=".\Client\build\Organ Donation Portal_files\organ donation 2.webp"
+                  src="https://www.shutterstock.com/image-photo/organ-donation-transplantation-concept-human-hands-1765962845"
                   alt=""
                 />
                 <img
