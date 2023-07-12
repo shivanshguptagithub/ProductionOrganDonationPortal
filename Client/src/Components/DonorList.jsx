@@ -11,7 +11,7 @@ function DonorList(){
 
   useEffect(() => {
     axios
-      .get("/donorlist")
+      .get("/donorslist")
       .then((response) => {
         setData(response.data);
       })
@@ -26,7 +26,8 @@ function DonorList(){
     
   }
 
- return(<div>
+ return(
+ <div>
     
     {/* Navbar Start */}
     <nav

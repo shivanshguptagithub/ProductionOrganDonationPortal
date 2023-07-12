@@ -9,7 +9,7 @@ function HospitalList(){
 
   useEffect(() => {
     axios
-      .get("/Hospitallist")
+      .get("/Hospitalslist")
       .then((response) => {
         setData(response.data);
       })

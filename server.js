@@ -13,7 +13,7 @@ import passport from "passport";
 import passportLocalMongoose from "passport-local-mongoose";
 
 const app = express();
-app.use(bodyParser.urlencoded({extends:true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 let isAuthenticate=false;
 dotenv.config();
@@ -30,8 +30,8 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
- mongoose.connect("mongodb://localhost:27017/OrganDonationPortalDB");
-//mongoose.connect("mongodb+srv://guptashivansh28121999:FcQBbBeTVaRg2jC1@cluster0.xakvdsx.mongodb.net/OrganDonationPortalDB");
+ //mongoose.connect("mongodb://localhost:27017/OrganDonationPortalDB");
+mongoose.connect("mongodb+srv://guptashivansh28121999:FcQBbBeTVaRg2jC1@cluster0.xakvdsx.mongodb.net/OrganDonationPortalDB");
 const userSchema= new mongoose.Schema({
   username:String,
   password:String
@@ -255,12 +255,12 @@ const OrganRequest1= new OrganRequest({
 app.use(cors({
     origin:"http://localhost:3000"
 }));
-app.get('/', function(req, res) {
-  const data = {
-    message: 'Hello from the server!'
-  };
-  res.json(data);
-});
+// app.get('/', function(req, res) {
+//   const data = {
+//     message: 'Hello from the server!'
+//   };
+//   res.json(data);
+// });
 
 //Register
 app.post("/register", function(req,res){
@@ -315,7 +315,7 @@ app.get('/api/authenticated', (req, res) => {
 });
 
 //Donor
-app.get('/donorlist', function(req, res) {
+app.get('/donorslist', function(req, res) {
     Donor.find().then(function(data){
       res.send(data);
     });
@@ -387,7 +387,7 @@ app.get('/donordelete/:id', function(req, res) {
 
 //Recipient
 
-app.get('/recipientlist', function(req, res) {
+app.get('/recipientslist', function(req, res) {
   Recipient.find().then(function(data){
     res.send(data);
   });
@@ -453,7 +453,7 @@ app.get('/Recipientdelete/:id', function(req, res) {
 });
 //Hospital
 
-app.get('/Hospitallist', function(req, res) {
+app.get('/Hospitalslist', function(req, res) {
   Hospital.find().then(function(data){
     res.send(data);
   });
@@ -576,9 +576,9 @@ app.get('/OrganRequest/:id', function(req, res) {
 });
 
 
-app.use(express.static(path.join(__dirname,"./client/build")))
+app.use(express.static(path.join(__dirname,"./Client/build")))
 app.get("*", (req,res)=>{
-  res.sendFile(path.join(__dirname,"./client/build/index.html"))
+  res.sendFile(path.join(__dirname,"./Client/build/index.html"))
 })
 
 app.listen(5000||process.env.PORT, function(){

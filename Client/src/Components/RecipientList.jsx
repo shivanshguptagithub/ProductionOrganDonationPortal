@@ -8,7 +8,7 @@ function RecipientList(){
   const navigate = useNavigate();
   useEffect(() => {
     axios
-      .get("/Recipientlist")
+      .get("/Recipientslist")
       .then((response) => {
         setData(response.data);
       })
